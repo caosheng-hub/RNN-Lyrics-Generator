@@ -170,28 +170,28 @@ def evaluate(start_word,sentence_length):
 # 6. 测试.
 if __name__ == '__main__':
     # 1.获取数据，进行分词，获取词表
-    # unique_words,word_to_index,word_count,corpus_idx= build_vocab()
-    # print(f'词的数量: {word_count}')        # 去重后，5703个词
-    # print(f'去重后的词: {unique_words}')   # ['想要', '有', '直升机', '直升机', '\n', '和', '你'...'冠军', '要大卖']
-    # print(f'每个词的索引: {word_to_index}') # 词表: {'想要': 0, '有': 1, '直升机': 2, '\n': 3, '和': 4, '你': 5, ...'冠军': 5701, '要大卖': 5702}
-    # print(f'文档中每个词对应的索引: {corpus_idx}') # [0, 1, 2, 1, 3, 40, 0, 4, 5, 6, 7, 8, 3, 40, 0, 4, 5, 9, 10, 11, 3, 40,......]
+    unique_words,word_to_index,word_count,corpus_idx= build_vocab()
+    print(f'词的数量: {word_count}')        # 去重后，5703个词
+    print(f'去重后的词: {unique_words}')   # ['想要', '有', '直升机', '直升机', '\n', '和', '你'...'冠军', '要大卖']
+    print(f'每个词的索引: {word_to_index}') # 词表: {'想要': 0, '有': 1, '直升机': 2, '\n': 3, '和': 4, '你': 5, ...'冠军': 5701, '要大卖': 5702}
+    print(f'文档中每个词对应的索引: {corpus_idx}') # [0, 1, 2, 1, 3, 40, 0, 4, 5, 6, 7, 8, 3, 40, 0, 4, 5, 9, 10, 11, 3, 40,......]
 
     # 2.构建数据集
-    # dataset = LyricsDataset(corpus_idx,num_chars=5)
-    # print(f'句子数量：{len(dataset)}')
+    dataset = LyricsDataset(corpus_idx,num_chars=5)
+    print(f'句子数量：{len(dataset)}')
     # 查看输入值和目标值
     # x,y = dataset[0]
-    # print(f'输入值：{x}')   # [0, 1, 2, 3, 40]
-    # print(f'目标值：{y}')   # [1, 2, 3, 40, 0]
+    print(f'输入值：{x}')   # [0, 1, 2, 3, 40]
+    print(f'目标值：{y}')   # [1, 2, 3, 40, 0]
 
     # 3.创建模型对象
-    # model = TextGenerator(word_count)
+    model = TextGenerator(word_count)
     # 查看参数
-    # for name,parameter in model.named_parameters():
-        # print(f'参数名称：{name},参数维度：{parameter.shape}')
+    for name,parameter in model.named_parameters():
+        print(f'参数名称：{name},参数维度：{parameter.shape}')
 
     # 4.训练并保存模型
-    # train()
+    train()
 
     # 5.测试模型
     evaluate('手牵手',50)
