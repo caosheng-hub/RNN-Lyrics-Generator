@@ -180,7 +180,7 @@ if __name__ == '__main__':
     dataset = LyricsDataset(corpus_idx,num_chars=5)
     print(f'句子数量：{len(dataset)}')
     # 查看输入值和目标值
-    # x,y = dataset[0]
+    x,y = dataset[0]
     print(f'输入值：{x}')   # [0, 1, 2, 3, 40]
     print(f'目标值：{y}')   # [1, 2, 3, 40, 0]
 
