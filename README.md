@@ -69,6 +69,7 @@ Softmax（概率分布）
 ├── RNN_AI歌词生成器案例.py     # 🚀 主程序（训练 + 预测）
 │
 ├── model.pth                 # 💾 训练好的模型（可选）
+├── demo.py                    # 训练入口
 ├── README.md
 ├── LICENSE
 ├── .gitignore
